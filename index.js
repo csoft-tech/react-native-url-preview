@@ -51,6 +51,8 @@ export default class RNUrlPreview extends React.PureComponent {
   }
 
   _onLinkPressed = () => {
+    const { onClick } = this.props;
+    onClick();
     Linking.openURL(this.props.text.match(REGEX)[0]);
   };
 
@@ -148,6 +150,7 @@ const styles = {
 RNUrlPreview.defaultProps = {
   onLoad: () => {},
   onError: () => {},
+  onClick:()=>{},
   text: null,
   requestOptions: {},
   containerStyle: {
@@ -195,6 +198,7 @@ RNUrlPreview.defaultProps = {
 RNUrlPreview.propTypes = {
   onLoad: PropTypes.func,
   onError: PropTypes.func,
+  onClick: PropTypes.func,
   text: PropTypes.string,
   containerStyle: ViewPropTypes.style,
   imageStyle: ViewPropTypes.style,
