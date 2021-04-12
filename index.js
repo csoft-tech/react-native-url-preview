@@ -53,7 +53,7 @@ export default class RNUrlPreview extends React.PureComponent {
   _onLinkPressed = () => {
     const { onClick } = this.props;
     onClick();
-    Linking.openURL(this.props.text.match(REGEX)[0]);
+//     Linking.openURL(this.props.text.match(REGEX)[0]);
   };
 
   renderImage = (imageLink, faviconLink, imageStyle, faviconStyle, imageProps) => {
